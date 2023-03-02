@@ -66,7 +66,7 @@ export const reducer = (state, action) => {
     if (action.type === "PORT_DATA") {
         return {
             ...state,
-            portfolioData: action.payload.portfolioData
+            portfolioData: action.payload.portfolioData,
 
         }
     }
@@ -74,6 +74,13 @@ export const reducer = (state, action) => {
         return {
             ...state,
             ServicesData: action.payload.ServicesData
+
+        }
+    }
+    if (action.type === "FILTER_IMAGES") {
+        return {
+            ...state,
+            selectCategory: action.payload
 
         }
     }

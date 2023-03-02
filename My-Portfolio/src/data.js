@@ -68,8 +68,8 @@ export const ProjectsData = [
         "Technologies": "iOS, HTML5, CSS3, PHP, Java",
         "Industry": "Art & Design",
         "Date": "July 16, 2019",
-        "URL": "www.example.com"
-
+        "URL": "www.example.com",
+        category: "Design"
 
     },
     {
@@ -83,7 +83,8 @@ export const ProjectsData = [
         "Technologies": "iOS, HTML5, CSS3, PHP, Java",
         "Industry": "Art & Design",
         "Date": "July 16, 2019",
-        "URL": "www.example.com"
+        "URL": "www.example.com",
+        category: "Design"
 
 
     },
@@ -98,8 +99,9 @@ export const ProjectsData = [
         "Technologies": "iOS, HTML5, CSS3, PHP, Java",
         "Industry": "Art & Design",
         "Date": "July 16, 2019",
-        "URL": "www.example.com"
-
+        "URL": "www.example.com",
+        category: "Design"
+        
 
     },
     {
@@ -113,9 +115,9 @@ export const ProjectsData = [
         "Technologies": "iOS, HTML5, CSS3, PHP, Java",
         "Industry": "Art & Design",
         "Date": "July 16, 2019",
-        "URL": "www.example.com"
+        "URL": "www.example.com",
 
-
+        category: "Brand"
     },
     {
         id: 5,
@@ -128,7 +130,8 @@ export const ProjectsData = [
         "Technologies": "iOS, HTML5, CSS3, PHP, Java",
         "Industry": "Art & Design",
         "Date": "July 16, 2019",
-        "URL": "www.example.com"
+        "URL": "www.example.com",
+        category: "Brand"
 
 
     },
@@ -143,7 +146,9 @@ export const ProjectsData = [
         "Technologies": "iOS, HTML5, CSS3, PHP, Java",
         "Industry": "Art & Design",
         "Date": "July 16, 2019",
-        "URL": "www.example.com"
+        "URL": "www.example.com",
+        category: "Photos"
+
 
 
     },
@@ -158,7 +163,8 @@ export const ProjectsData = [
         "Technologies": "iOS, HTML5, CSS3, PHP, Java",
         "Industry": "Art & Design",
         "Date": "July 16, 2019",
-        "URL": "www.example.com"
+        "URL": "www.example.com",
+        category: "Photos"
 
 
     },
@@ -169,12 +175,16 @@ export const ServicesJsonData =[
           {
             "title": "Web Design",
             "icon": "fas fa-paint-brush",
-            "description": "We create beautiful and user-friendly websites that help you achieve your business goals."
+            "description": "We create beautiful and user-friendly websites that help you achieve your business goals.",
+
+          
           },
           {
             "title": "Web Development",
             "icon": "fas fa-code",
-            "description": "We build fast and scalable web applications using the latest technologies and best practices."
+            "description": "We build fast and scalable web applications using the latest technologies and best practices.",
+            
+
           },
           {
             "title": "E-Commerce",

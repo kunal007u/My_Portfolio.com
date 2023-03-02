@@ -15,7 +15,7 @@ const Services = () => {
         <Wrapper>
 
             <HeaderCard />
-            <div className={`box container ${DarkMode ? 'dark' : ""}`}>
+            <div className={`box container ${DarkMode ? 'dark' : ""} p-4`}>
                     <div className="two-column-grid grid ">
                         <ServicesCard />
                     </div>

@@ -17,9 +17,9 @@ const Hero = () => {
                             <h2>krunal Kathiriya</h2>
                             <p> I am a frontend web developer. I can provide clean code and pixel perfect design. I also make website more & more interactive with web animations.</p>
                             <div className={`icons `}>
-                                <a href=""><i class={`fa-brands fa-linkedin ${DarkMode ? "dark-icons": ""}`}></i></a>
-                                <a href=""><i class={`fa-brands fa-facebook  ${DarkMode ? "dark-icons": ""}`}></i></a>
-                                <a href="https://www.instagram.com/kunal____007u/"><i class={`fa-brands fa-instagram  ${DarkMode ? "dark-icons": ""}`}></i></a>
+                                <a href=""><i className={`fa-brands fa-linkedin ${DarkMode ? "dark-icons": ""}`}></i></a>
+                                <a href=""><i className={`fa-brands fa-facebook  ${DarkMode ? "dark-icons": ""}`}></i></a>
+                                <a href="https://www.instagram.com/kunal____007u/"><i className={`fa-brands fa-instagram  ${DarkMode ? "dark-icons": ""}`}></i></a>
 
 
 

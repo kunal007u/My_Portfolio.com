@@ -14,7 +14,8 @@ const Appprovider = ({ children }) => {
         headerTitle: "",
         headerSubTitle: "",
         portfolioData: [],
-        ServicesData:[]
+        ServicesData:[],
+        selectCategory: " ",
 
 
     }
@@ -66,7 +67,7 @@ const Appprovider = ({ children }) => {
 
             type: "PORT_DATA",
             payload: {
-                portfolioData: ProjectsData
+                portfolioData: ProjectsData,
             }
         })
     }
@@ -87,10 +88,20 @@ const Appprovider = ({ children }) => {
 
         })
     }
+    const FilterImg = (Category) => {
+        return dispatch({
+            type: "FILTER_IMAGES",
+            payload:
+            {
+                selectCategory:Category
+            }
+
+        })
+    }
    
 
     return (
-        <AppContext.Provider value={{ ...state, darkMode, state, UpdateAboutHeaderTitle, UpdateHomeHeaderTitle, UpdateExperienceHeaderTitle, UpdatePortfolioHeaderTitle, PortData,ServeData }}>
+        <AppContext.Provider value={{ ...state, darkMode, state, UpdateAboutHeaderTitle, UpdateHomeHeaderTitle, UpdateExperienceHeaderTitle, UpdatePortfolioHeaderTitle, PortData,ServeData ,FilterImg}}>
             {children}
         </AppContext.Provider>
     )

@@ -14,7 +14,7 @@ const About = () => {
 
       <HeaderCard />
 
-      <div className={`container  ${DarkMode ? 'dark' : ''}`}>
+      <div className={`container  ${DarkMode ? 'dark' : ''} About-container`}>
         <div className="about-section two-column-grid grid ">
           <div className="summary">
             <h3>I'm Krunal Kathiriya, a Web Developer</h3>
@@ -43,7 +43,9 @@ const About = () => {
 
 const Wrapper = styled.section`
 margin-bottom: 10%;
-
+.About-container{
+  margin-top: 8%;
+}
 .about-section{
   display: flex;
   width: 100%;

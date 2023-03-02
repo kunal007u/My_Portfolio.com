@@ -14,13 +14,13 @@ import GoToTop from './Components/GoToTop';
 
 
 function App() {
-  const { state } = useGloablContext()
+  const { DarkMode } = useGloablContext()
 
 
 
   return (
     <>
-      <div className={state.DarkMode ? "dark" : ""}>
+      <div className={DarkMode ? "dark" : ""}>
 
         <BrowserRouter>
           <Navbar />

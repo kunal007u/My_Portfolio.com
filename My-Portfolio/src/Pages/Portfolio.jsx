@@ -6,21 +6,30 @@ import styled from 'styled-components';
 
 const Portfolio = () => {
 
+  const { UpdatePortfolioHeaderTitle, portfolioData, PortData, DarkMode, selectCategory, FilterImg, state } = useGloablContext();
   const [model, setModel] = useState(false)
-  const [imgID, setImgID] = useState([])
-  const { UpdatePortfolioHeaderTitle, portfolioData, PortData ,DarkMode} = useGloablContext();
+  const [modelsection, setmodelSection] = useState([])
 
+  // console.log(selectCategory);
+  const filteredImages =
+    selectCategory === ''
+      ? portfolioData
+      : portfolioData.filter((item) => {
+        console.log(typeof(item.category) ,typeof( selectCategory));
+        return item.category == selectCategory;
+      })
 
+  // console.log(filteredImages);
+  const categories = [...new Set(portfolioData.map((img) => img.category))];
+  // console.log(categories);
 
   const getClose = () => {
     setModel(false)
     console.log("close");
   }
   const getImg = (item) => {
-    // console.log(id);
-    console.log(item);
     setModel(true)
-    setImgID(item)
+    setmodelSection(item)
 
   }
   useEffect(() => {
@@ -34,34 +43,48 @@ const Portfolio = () => {
 
       <Wrapper>
         <HeaderCard />
+        {/* Category menu */}
 
+
+        <ul className="portfolio-menu nav nav-tabs justify-content-center border-bottom-0 mb-5 nav-light">
+          <li className="nav-item">
+            {categories.map((category) => (
+              <button key={category} onClick={() => FilterImg(category)}>
+                {category}
+              </button>
+            ))}
+          </li>
+
+        </ul>
+
+        {/* Model section */}
         <div className={model ? 'model open' : 'model'} >
           <div className={` container`}>
 
             <div className="header-title position-relative ">
 
-              <h2 className=' d-flex justify-content-center mt-4 '>{imgID.name}</h2>
+              <h2 className=' d-flex justify-content-center mt-4 '>{modelsection.name}</h2>
               <div className="btn  ">
-                <button type="button" class="btn-close position-absolute " aria-label="Close" onClick={() => getClose()} style={{ top: "-22px", left: "97%" }}></button>
+                <button type="button" className="btn-close position-absolute " aria-label="Close" onClick={() => getClose()} style={{ top: "-22px", left: "97%" }}></button>
               </div>
             </div>
             <div className="grid two-column-grid m-4">
               <div className="img-box">
-                <img src={imgID.img} alt="" width={"80%"} height={"30%"} />
+                <img src={modelsection.img} alt="" width={"80%"} height={"30%"} />
 
               </div>
               <div className="project-detail">
                 <h2>Project Info</h2>
-                <p>{imgID.ProjectInfo}</p>
+                <p>{modelsection.ProjectInfo}</p>
 
                 <h4>Project Details:</h4>
                 <div className="p-details">
 
-                  <p className='P-detail  position-relative'>Client : {imgID.Client}</p>
-                  <p className='P-detail  position-relative'>Technologies : {imgID.Technologies}</p>
-                  <p className='P-detail  position-relative'>Industry : {imgID.Industry}</p>
-                  <p className='P-detail  position-relative'>Date : {imgID.Date}</p>
-                  <p className='P-detail  position-relative'>URL : {imgID.URL}</p>
+                  <p className='P-detail  position-relative'>Client : {modelsection.Client}</p>
+                  <p className='P-detail  position-relative'>Technologies : {modelsection.Technologies}</p>
+                  <p className='P-detail  position-relative'>Industry : {modelsection.Industry}</p>
+                  <p className='P-detail  position-relative'>Date : {modelsection.Date}</p>
+                  <p className='P-detail  position-relative'>URL : {modelsection.URL}</p>
                 </div>
               </div>
             </div>
@@ -69,16 +92,18 @@ const Portfolio = () => {
 
         </div>
 
-        <div className={`container gallery ${DarkMode?'dark':''}`} style={{marginBottom:"10%"}}>
+
+
+        {/* Portfolio img gallery */}
+        <div className={`container gallery ${DarkMode ? 'dark' : ''}`} style={{ marginBottom: "10%" }}>
           {
-            portfolioData.map((item, index) => {
+            filteredImages.map((item, index) => {
+              // here Item is a specific data for pecific imges 
               return (
-                <>
-                  <div className="pics img__wrap ">
-                    <img src={item.img} alt="" style={{ width: "100%" }} onClick={() => getImg(item)} className="img__img card" />
-                    <p className='item-name  img__description ' >{item.name}</p>
-                  </div>
-                </>
+                <div className="pics img__wrap " key={index}>
+                  <img src={item.img} alt="" style={{ width: "100%" }} onClick={() => getImg(item)} className="img__img card" />
+                  <p className='item-name  img__description ' >{item.name}</p>
+                </div>
               )
             })
           }
