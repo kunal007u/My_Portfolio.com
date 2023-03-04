@@ -18,12 +18,9 @@ const About = () => {
         <div className="about-section two-column-grid grid ">
           <div className="summary">
             <h3>I'm Krunal Kathiriya, a Web Developer</h3>
-            
-            <p>As a new developer with a focus on React, I am eager to build my skills and contribute to exciting projects in the field of web development. With a solid foundation in React and a hunger to learn more, I am committed to writing clean, efficient code and creating dynamic, user-friendly interfaces that meet the needs of users and stakeholders</p>
-            <p>
-            As a new developer with a focus on React, I am eager to build my skills and contribute to exciting projects in the field of web development. With a solid foundation in React and a hunger to learn more, I am committed to writing clean, efficient code and creating dynamic, user-friendly interfaces that meet the needs of users and stakeholders
 
-            </p>
+            <p>As a new developer with a focus on React, I am eager to build my skills and contribute to exciting projects in the field of web development. With a solid foundation in React and a hunger to learn more, I am committed to writing clean, efficient code and creating dynamic, user-friendly interfaces that meet the needs of users and stakeholders</p>
+
           </div>
           <div className="detail">
             <p>Name: krunal kathiriya</p>
@@ -37,6 +34,7 @@ const About = () => {
           </div>
         </div>
       </div>
+     
     </Wrapper>
   )
 }

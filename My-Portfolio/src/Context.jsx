@@ -15,7 +15,7 @@ const Appprovider = ({ children }) => {
         headerSubTitle: "",
         portfolioData: [],
         ServicesData:[],
-        selectCategory: " ",
+        selectCategory: "All"
 
 
     }

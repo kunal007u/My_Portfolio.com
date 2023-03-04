@@ -64,9 +64,8 @@ export const ProjectsData = [
         "img": `https://harnishdesign.net/demo/react/simone/demo/images/projects/project-1.jpg`,
 
 
-        "Client": "Ruby Clinton",
-        "Technologies": "iOS, HTML5, CSS3, PHP, Java",
-        "Industry": "Art & Design",
+        "Client": "self",
+        "Technologies": "HTML , CSS, JavaScript, React",
         "Date": "July 16, 2019",
         "URL": "www.example.com",
         category: "Design"

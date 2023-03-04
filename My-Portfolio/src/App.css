@@ -8,6 +8,7 @@
 
 body {
     overflow-x: hidden;
+    width: fit-content;
     font-family: 'Poppins', sans-serif;
 
 }
@@ -131,13 +132,14 @@ a {
     font-size: 1.2rem;
     text-decoration: none;
     color: black;
-    
+
 }
 
-h3{
+h3 {
     text-transform: uppercase;
 }
-h2{
+
+h2 {
     text-transform: uppercase;
 
 }
@@ -168,7 +170,8 @@ h2{
     width: 100%;
 
 }
-input:focus{
+
+input:focus {
     outline: none;
 }
 

@@ -25,17 +25,16 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-
         </div>
-
-
 
         <div className="second-row">
           <div className="four-column-grid grid" style={{ alignItems: "flex-start" }}>
 
             <div className="first-column">
               <h3>Krunal kathiriya</h3>
-              <p>Lorem ipsum dolor sit amet .</p>
+              <p>Web Developer </p>
+              <p>Front End Developer </p>
+              <p>React Developer </p>
             </div>
 
             <div className="second-column">
@@ -49,14 +48,7 @@ const Footer = () => {
                 <a href=""><i className={`fa-brands fa-linkedin ${DarkMode ? "dark-icons" : ""}`}></i></a>
                 <a href=""><i className={`fa-brands fa-facebook  ${DarkMode ? "dark-icons" : ""}`}></i></a>
                 <a href="https://www.instagram.com/kunal____007u/"><i className={`fa-brands fa-instagram  ${DarkMode ? "dark-icons" : ""}`}></i></a>
-
-
-
-
-
-
               </div>
-
             </div>
 
             <div className="forth-column">
@@ -77,6 +69,16 @@ const Footer = () => {
 }
 
 const Wrapper = styled.section`
+
+@media only screen and (max-width: 1345px) {
+   .first-column p{
+     font-size: 0.8rem;
+
+   } 
+   .first-column h3{
+     font-size: 0.8rem;
+   } 
+  }
 .footer_section{
   background-color: #f2f2f2;
   /* position: fixed; */
@@ -108,7 +110,10 @@ justify-content: space-between;
  padding: 10px;
 /* align-items: center; */
 
- 
+  .first-column {
+    line-height: 1rem;
+    list-style: circle;
+  }
 }
 
 h3{

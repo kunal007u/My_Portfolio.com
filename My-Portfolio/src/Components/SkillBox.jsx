@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useGloablContext } from '../Context'
+import Resume from '../assets/Resume.pdf'
 
 const SkillBox = () => {
     const { DarkMode } = useGloablContext()
@@ -76,11 +77,11 @@ const SkillBox = () => {
                         </div>
 
                     </div>
-                    <div className="btn d-flex justify-content-center">
+                    <div className=" d-flex justify-content-center">
 
                         <button type="button" className="btn btn-success mt-3 ">
 
-                            <a href="" className={` text-light`}>Download CV</a>
+                            <a href={Resume} target="_blank" className={`text-light`}>Download CV</a>
 
                         </button>
                     </div>

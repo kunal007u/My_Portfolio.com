@@ -18,22 +18,22 @@ const NavBar = () => {
                 <nav>
                     <div className={`container-fluid ${state.DarkMode ? 'dark' : ''}`}  >
                         {/* ref={hero} */}
-                        <div className="three-column-grid grid" >
+                        <div className="three-column-grid grid position-relative" >
                             <div className="two-column-grid grid-special">
                                 <div className="logo_section">
 
                                     <img src={logo} alt="" className={`${DarkMode ? 'logo_dark' : "logo"}`} />
 
                                 </div>
-                                <div className="dark_mode">
-                                <input type="checkbox" className="checkbox" id="checkbox" onClick={(e) => darkMode()} value={state.DarkMode} />
-                                <label htmlFor="checkbox" className="label">
-                                    <i className='fas fa-sun'></i>
-                                    <i className="fas fa-moon"></i>
-                                    <div className='ball' />
-                                </label>
-                            </div>
-                                
+                                <div className="dark_mode ">
+                                    <input type="checkbox" className="checkbox" id="checkbox" onClick={(e) => darkMode()} value={state.DarkMode} style={{ height: "30px", width: "30px" }} />
+                                    <label htmlFor="checkbox" className="label">
+                                        <i className='fas fa-sun'></i>
+                                        <i className="fas fa-moon"></i>
+                                        <div className='ball' />
+                                    </label>
+                                </div>
+
                             </div>
 
                             {/* ref={menu_section} */}
@@ -60,17 +60,17 @@ const NavBar = () => {
                                             Portfolio
                                         </Link>
                                     </li>
-                                    <li>
+                                    {/* <li>
                                         <Link to="/testimonial">
                                             Testimonial
                                         </Link>
-                                    </li>
+                                    </li> */}
                                 </ul>
                             </div>
 
-                            <div className="contact-btn-section">
+                            <div className="contact-btn-section postition-relative " >
                                 <Link to='/contact' style={{ textDecoration: "none", color: 'white' }}>
-                                    <button className='contact_btn'>
+                                    <button className='contact_btn '>
                                         contact
                                     </button>
                                 </Link>
@@ -97,7 +97,7 @@ position: sticky;
     padding: 12px;
     margin: auto;
     background-color: #f1f1f1;
-    width: 100%;
+    width: fit-content;
     font-family: 'Poppins', sans-serif;
     display: flex;
     position: sticky;
@@ -106,11 +106,17 @@ position: sticky;
     // font-family: 'Roboto Slab', serif;
 
 }
+@media screen and (max-width: 600px) {
 
+  
+}
 
 .grid-special{
     display: grid;
    
+}
+.dark_mode{
+    left: 190px;
 }
 
 
@@ -232,9 +238,7 @@ position: sticky;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-
-    
+  
 }
 .contact_btn{
     box-shadow: rgb(168 73 18) 0px 0px 30px;
@@ -245,6 +249,7 @@ position: sticky;
     font-size: 1.1rem;
     color: white;
     background: orange ;
+    
 }
 
 .contact_btn:hover {

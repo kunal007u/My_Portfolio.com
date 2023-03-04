@@ -1,29 +1,43 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { useGloablContext } from '../Context'
 
 const HeaderCard = () => {
-    const { headerTitle,headerSubTitle} = useGloablContext()
+  const { headerTitle, headerSubTitle } = useGloablContext()
 
-   
-    
-    return (
-        <Wrapper>
 
-            <div className="Aboutme-section">
-                <h1>{headerTitle}</h1>
-                <div className="aboutme-small">
-                    <h4>{headerSubTitle}</h4>
-                    <div className='horizontal'></div>
-                </div>
-            </div>
-        </Wrapper>
-    )
+
+  return (
+    <Wrapper>
+      <section className='Header'>
+        <div className="Aboutme-section">
+          <h1>{headerTitle}</h1>
+          <div className="aboutme-small">
+            <h4>{headerSubTitle}</h4>
+            <div className='horizontal'></div>
+          </div>
+        </div>
+      </section>
+
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`
 
+.Header {
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 1.2rem;
+  }
 
+  /* Media query for smaller screens */
+  /* @media screen and (max-width: 768px) {
+    section {
+      width: 90%;
+      font-size: 1rem;
+    }
+  } */
 
 .Aboutme-section {
   display: flex;
@@ -32,7 +46,9 @@ const Wrapper = styled.section`
   position: relative;
   transition: all 1.5s ease-in-out;
   margin: 32px 0px;
+ 
 }
+
 .Aboutme-section h1{
     font-size: 10rem;
     opacity: 0.1;

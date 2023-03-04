@@ -9,19 +9,14 @@ const Portfolio = () => {
   const { UpdatePortfolioHeaderTitle, portfolioData, PortData, DarkMode, selectCategory, FilterImg, state } = useGloablContext();
   const [model, setModel] = useState(false)
   const [modelsection, setmodelSection] = useState([])
+  console.log(selectCategory);
 
-  // console.log(selectCategory);
-  const filteredImages =
-    selectCategory === ''
-      ? portfolioData
-      : portfolioData.filter((item) => {
-        console.log(typeof(item.category) ,typeof( selectCategory));
-        return item.category == selectCategory;
-      })
+  const filteredImages = selectCategory === "All"
+    ? portfolioData
+    : portfolioData.filter((img) => img.category === state.selectCategory)
 
-  // console.log(filteredImages);
+  // console.log(portfolioData);
   const categories = [...new Set(portfolioData.map((img) => img.category))];
-  // console.log(categories);
 
   const getClose = () => {
     setModel(false)
@@ -32,6 +27,7 @@ const Portfolio = () => {
     setmodelSection(item)
 
   }
+
   useEffect(() => {
     UpdatePortfolioHeaderTitle()
     PortData()
@@ -48,24 +44,29 @@ const Portfolio = () => {
 
         <ul className="portfolio-menu nav nav-tabs justify-content-center border-bottom-0 mb-5 nav-light">
           <li className="nav-item">
-            {categories.map((category) => (
-              <button key={category} onClick={() => FilterImg(category)}>
-                {category}
-              </button>
-            ))}
+            <a className="me-3 my-button" type="button" onClick={() => FilterImg("All")}>ALL</a>
+            {categories.map((category) => {
+              return (
+
+
+                <a className="me-3 my-button" type="button" key={category} onClick={() => FilterImg(category)}>
+                  {category}
+                </a>
+              )
+            })}
           </li>
 
         </ul>
 
         {/* Model section */}
         <div className={model ? 'model open' : 'model'} >
-          <div className={` container`}>
+          <div className={` container ${DarkMode ? 'dark' : ''}`}>
 
             <div className="header-title position-relative ">
 
               <h2 className=' d-flex justify-content-center mt-4 '>{modelsection.name}</h2>
-              <div className="btn  ">
-                <button type="button" className="btn-close position-absolute " aria-label="Close" onClick={() => getClose()} style={{ top: "-22px", left: "97%" }}></button>
+              <div className={`btn position-absolute`} style={{ top: "-22px", left: "97%" }}>
+                <button type="button" className={`btn-close  ${DarkMode ? 'light-close' : ''}`} aria-label="Close" onClick={() => getClose()} ></button>
               </div>
             </div>
             <div className="grid two-column-grid m-4">
@@ -82,9 +83,9 @@ const Portfolio = () => {
 
                   <p className='P-detail  position-relative'>Client : {modelsection.Client}</p>
                   <p className='P-detail  position-relative'>Technologies : {modelsection.Technologies}</p>
-                  <p className='P-detail  position-relative'>Industry : {modelsection.Industry}</p>
+                  {/* <p className='P-detail  position-relative'>Industry : {modelsection.Industry}</p> */}
                   <p className='P-detail  position-relative'>Date : {modelsection.Date}</p>
-                  <p className='P-detail  position-relative'>URL : {modelsection.URL}</p>
+                  <p className='P-detail  position-relative'><a href=''>URL : {modelsection.URL}</a></p>
                 </div>
               </div>
             </div>
@@ -92,21 +93,18 @@ const Portfolio = () => {
 
         </div>
 
-
-
         {/* Portfolio img gallery */}
         <div className={`container gallery ${DarkMode ? 'dark' : ''}`} style={{ marginBottom: "10%" }}>
           {
             filteredImages.map((item, index) => {
-              // here Item is a specific data for pecific imges 
+
               return (
                 <div className="pics img__wrap " key={index}>
                   <img src={item.img} alt="" style={{ width: "100%" }} onClick={() => getImg(item)} className="img__img card" />
                   <p className='item-name  img__description ' >{item.name}</p>
                 </div>
               )
-            })
-          }
+            })}
         </div>
 
       </Wrapper>
@@ -117,9 +115,15 @@ const Portfolio = () => {
 }
 
 const Wrapper = styled.section`
+@media only screen and (max-width: 1345px) {
+    
+  }
 
-
-
+.light-close{
+  background-color: wheat;
+    color: red;
+    filter: hue-rotate(45deg);
+}
 .gallery{
   column-count: 3;
 column-width: 33%;
@@ -144,7 +148,7 @@ transform: scale(0);
 overflow: hidden;
 z-index: 999;
 transition: opacity 0.4s ease, visibility 0.4s ease , transform 0.4s ease;
-background-color: antiquewhite;
+background-color: #777474;
 }
 .model.open{
 
@@ -164,17 +168,7 @@ transform: scale(1);
   left: 0;
 
 }
-/* .item-name{
 
-  font-size: 2rem;
-  opacity: 0;
-} */
-/* .pics {
-opacity: 0.5;
-}
-img:hover p{
-  opacity: 1;
-}*/
 
 .img__wrap {
   position: relative;
@@ -200,6 +194,24 @@ img:hover p{
   visibility: visible;
   opacity: 1;
 }
+
+.my-button {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .my-button {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
 
 
 `

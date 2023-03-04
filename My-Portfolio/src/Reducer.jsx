@@ -80,7 +80,7 @@ export const reducer = (state, action) => {
     if (action.type === "FILTER_IMAGES") {
         return {
             ...state,
-            selectCategory: action.payload
+            selectCategory: action.payload.selectCategory
 
         }
     }
